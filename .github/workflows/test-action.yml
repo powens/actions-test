@@ -13,8 +13,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          python-version: 3.9
-          cache: 'pip'
+          python-version: 3.11
 
       - name: Run exit code -1 script
         run: python test_exit_code.py
