@@ -1,0 +1,20 @@
+name: Test exit code -1 from python script
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test_failing_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+    
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.9
+          cache: 'pip'
+
+      - name: Run exit code -1 script
+        run: python test_exit_code.py
